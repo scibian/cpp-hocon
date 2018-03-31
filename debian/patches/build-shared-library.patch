@@ -1,0 +1,20 @@
+Author: Apollon Oikonomopoulos <apoikos@debian.org>
+Description: Build a shared library
+ Upstream only builds a static archive. Let's make things simple and trade the
+ static archive for a shared library.
+Last-Update: 2018-02-25
+diff --git a/lib/CMakeLists.txt b/lib/CMakeLists.txt
+index 7184c13..c1322ad 100644
+--- a/lib/CMakeLists.txt
++++ b/lib/CMakeLists.txt
+@@ -76,8 +76,8 @@ set(PROJECT_SOURCES
+ add_library(libprojectsrc OBJECT ${PROJECT_SOURCES})
+ set_target_properties(libprojectsrc PROPERTIES POSITION_INDEPENDENT_CODE true)
+ 
+-add_library(lib${PROJECT_NAME} $<TARGET_OBJECTS:libprojectsrc>)
+-set_target_properties(lib${PROJECT_NAME} PROPERTIES VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
++add_library(lib${PROJECT_NAME} SHARED $<TARGET_OBJECTS:libprojectsrc>)
++set_target_properties(lib${PROJECT_NAME} PROPERTIES VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}" PREFIX "")
+ target_link_libraries(lib${PROJECT_NAME}
+     ${LEATHERMAN_LIBRARIES}
+     ${Boost_LIBRARIES}

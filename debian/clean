@@ -1,0 +1,5 @@
+lib/Doxyfile
+lib/docs/namespaces.dox
+lib/inc/hocon/export.h
+lib/inc/hocon/version.h
+lib/tests/fixtures.hpp

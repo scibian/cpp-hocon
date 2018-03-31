@@ -1,0 +1,2 @@
+version=3
+https://github.com/puppetlabs/cpp-hocon/releases .*/([\d.]+)/cpp-hocon.tar.gz
