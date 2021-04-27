@@ -1,3 +1,11 @@
+cpp-hocon (0.1.6-1~bpo9+1sci9u1) scibian9; urgency=medium
+
+  * Scibianization
+  * Back to compat 10 with dh 10
+  * Remove debian gbp.conf
+
+ -- Rémi Palancher <remi-externe.palancher@edf.fr>  Tue, 27 Apr 2021 21:27:15 +0200
+
 cpp-hocon (0.1.6-1~bpo9+1) stretch-backports; urgency=medium
 
   * Rebuild for stretch-backports.
